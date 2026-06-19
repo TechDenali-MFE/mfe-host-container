@@ -1,54 +1,33 @@
-declare global {
-  interface Window {
-    renderReactWidget?: (config: string) => void;
-    unmountReactWidget?: (id: string) => void;
-  }
-}
+import { loadWidget, removeWidget } from "./utils/widgetLoader";
+
+const USER_WIDGET_URL = import.meta.env.VITE_TEST_WIDGET_URL;
 
 function App() {
-  const loadWidget = () => {
-    const containerId = "user-widget";
-
-    const container = document.getElementById(containerId);
-
-    if (!container) {
-      console.error("Container not found");
-      return;
-    }
-    container.setAttribute("data-name", "Nishant");
-    
-    const script = document.createElement("script");
-    script.src = "http://localhost:4173/bundle.js";
-    script.async = true;
-
-    script.onload = () => {
-      window.renderReactWidget?.(
-        JSON.stringify({
-          containerElementId: containerId,
-        })
-      );
-    };
-
-    document.body.appendChild(script);
-  };
-
-  const removeWidget = () => {
-    window.unmountReactWidget?.("user-widget");
-  };
-
   return (
     <>
-      <h2>Microfrontend Widget Demo</h2>
+      <h1>Microfrontend Host Application</h1>
 
-      <button onClick={loadWidget}>
-        Load Nishant Widget
+      <button
+        onClick={() =>
+          loadWidget(USER_WIDGET_URL, "user-widget", {
+            name: "Nishant",
+          })
+        }
+      >
+        Load User Widget
       </button>
 
-      <button onClick={removeWidget}>
-        Remove Widget
+      <button
+        onClick={() => removeWidget("user-widget")}
+      >
+        Remove User Widget
       </button>
+
+      <hr />
 
       <div id="user-widget"></div>
+
+      
     </>
   );
 }
