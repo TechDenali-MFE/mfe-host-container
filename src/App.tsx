@@ -3,6 +3,7 @@ import { loadWidget, removeWidget } from "./utils/widgetLoader";
 const USER_WIDGET_URL = import.meta.env.VITE_TEST_WIDGET_URL;
 const GEORGE_WIDGET_URL = import.meta.env.VITE_GEORGE_WIDGET_URL1;
 const SOWMYA_WIDGET_URL = import.meta.env.VITE_SOWMYA_WIDGET_URL;
+const  SUNAYANA_WIDGET_URL=import.meta.env.VITE_SUNAYANA_WIDGET_URL;
 
 function App() {
   return (
@@ -63,6 +64,22 @@ function App() {
 
         <hr />
 
+
+         <button
+        onClick={() =>
+          loadWidget(SUNAYANA_WIDGET_URL, "sunayana-widget", {
+            name: "Sunayana",
+          })
+        }
+      >
+        Load Sunayana Widget
+      </button>
+
+      <button
+        onClick={() => removeWidget("sunayana-widget")}
+      >
+        Remove Sunayana Widget
+      </button>
         <div id="george-widget"></div>
 
 
@@ -70,7 +87,7 @@ function App() {
         <div id='sowmya-widget'>
 
         </div>
-
+<div id="sunayana-widget"></div>
       </>
       );
 }
