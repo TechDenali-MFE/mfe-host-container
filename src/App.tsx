@@ -4,6 +4,7 @@ const USER_WIDGET_URL = import.meta.env.VITE_TEST_WIDGET_URL;
 const GEORGE_WIDGET_URL = import.meta.env.VITE_GEORGE_WIDGET_URL1;
 const SOWMYA_WIDGET_URL = import.meta.env.VITE_SOWMYA_WIDGET_URL;
 const  SUNAYANA_WIDGET_URL=import.meta.env.VITE_SUNAYANA_WIDGET_URL;
+const RAMYA_WIDGET_URL = import.meta.env.VITE_RAMYA_WIDGET_URL;
 const ROHITH_WIDGET_URL = import.meta.env.VITE_ROHITH_WIDGET_URL;
 
 function App() {
@@ -82,13 +83,30 @@ function App() {
         Remove Sunayana Widget
       </button>
         <div id="george-widget"></div>
+        
 
+        <div id='sowmya-widget'> </div>
+        <hr />
+        <div id="sunayana-widget"></div>
 
+      <button
+        onClick={() =>
+          loadWidget(RAMYA_WIDGET_URL, "ramya-widget", {
+            name: "Ramya",
+          })
+        }
+      >
+        Load Ramya Widget
+      </button>
 
-        <div id='sowmya-widget'>
+      <button
+        onClick={() => removeWidget("ramya-widget")}
+      >
+        Remove Ramya Widget
+      </button>
 
-        </div>
-<div id="sunayana-widget"></div>
+      <hr />
+      <div id="ramya-widget"></div>
       
       <div>
         <hr />
