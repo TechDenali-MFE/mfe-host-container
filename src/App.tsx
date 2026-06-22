@@ -1,7 +1,7 @@
 import { loadWidget, removeWidget } from "./utils/widgetLoader";
 
 const USER_WIDGET_URL = import.meta.env.VITE_TEST_WIDGET_URL;
-const GEORGE_WIDGET_URL = import.meta.env.VITE_GEORGE_WIDGET_URL;
+const GEORGE_WIDGET_URL = import.meta.env.VITE_GEORGE_WIDGET_URL1;
 
 function App() {
   return (
