@@ -17,14 +17,12 @@ export const loadWidget = (
     return;
   }
 
-  // Set data attributes
   if (data) {
     Object.entries(data).forEach(([key, value]) => {
       container.setAttribute(`data-${key}`, value);
     });
   }
 
-  // Create script tag
   const script = document.createElement("script");
   script.src = url;
   script.async = true;
@@ -45,7 +43,6 @@ export const loadWidget = (
 };
 
 
-// Remove widget
 export const removeWidget = (containerId: string) => {
   window.unmountReactWidget?.(containerId);
 };
