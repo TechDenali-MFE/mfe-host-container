@@ -1,3 +1,4 @@
+import Header from "./components/header";
 import { loadWidget, removeWidget } from "./utils/widgetLoader";
 
 const USER_WIDGET_URL = import.meta.env.VITE_TEST_WIDGET_URL;
@@ -10,6 +11,8 @@ const GEETHIKA_WIDGET_URL = import.meta.env.VITE_GEETHIKA_WIDGET_URL
 function App() {
   return (
     <>
+
+      <Header></Header>
       <h1>Microfrontend Host Application</h1>
       <div>
         <button
