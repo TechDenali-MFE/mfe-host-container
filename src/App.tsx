@@ -3,51 +3,59 @@ import { loadWidget, removeWidget } from "./utils/widgetLoader";
 const USER_WIDGET_URL = import.meta.env.VITE_TEST_WIDGET_URL;
 const GEORGE_WIDGET_URL = import.meta.env.VITE_GEORGE_WIDGET_URL1;
 const SOWMYA_WIDGET_URL = import.meta.env.VITE_SOWMYA_WIDGET_URL;
-const  SUNAYANA_WIDGET_URL=import.meta.env.VITE_SUNAYANA_WIDGET_URL;
+const SUNAYANA_WIDGET_URL = import.meta.env.VITE_SUNAYANA_WIDGET_URL;
 const RAMYA_WIDGET_URL = import.meta.env.VITE_RAMYA_WIDGET_URL;
 const ROHITH_WIDGET_URL = import.meta.env.VITE_ROHITH_WIDGET_URL;
-
+const GEETHIKA_WIDGET_URL = import.meta.env.VITE_GEETHIKA_WIDGET_URL
 function App() {
   return (
     <>
       <h1>Microfrontend Host Application</h1>
+      <div>
+        <button
+          onClick={() =>
+            loadWidget(USER_WIDGET_URL, "user-widget", {
+              name: "Nishant",
+            })
+          }
+        >
+          Load User Widget
+        </button>
 
-      <button
-        onClick={() =>
-          loadWidget(USER_WIDGET_URL, "user-widget", {
-            name: "Nishant",
-          })
-        }
-      >
-        Load User Widget
-      </button>
+        <button
+          onClick={() => removeWidget("user-widget")}
+        >
+          Remove User Widget
+        </button>
 
-      <button
-        onClick={() => removeWidget("user-widget")}
-      >
-        Remove User Widget
-      </button>
-
+        <div id="user-widget"></div>
+      </div>
       <hr />
 
-      <div id="user-widget"></div>
 
-
-      <button
-        onClick={() =>
-          loadWidget(GEORGE_WIDGET_URL, "george-widget", {
-            name: "GEORGE",
-          })
-        }
-      >
-        Load George Widget
-      </button>
-
-      <button
-        onClick={() => removeWidget("george-widget")}
-      >
-        Remove George Widget
+      <div>
+        <button
+          onClick={() =>
+            loadWidget(GEORGE_WIDGET_URL, "george-widget", {
+              name: "GEORGE",
+            })
+          }
+        >
+          Load George Widget
         </button>
+
+        <button
+          onClick={() => removeWidget("george-widget")}
+        >
+          Remove George Widget
+        </button>
+
+        <div id="george-widget"></div>
+      </div>
+      <hr />
+
+
+      <div>
         <button
           onClick={() =>
             loadWidget(SOWMYA_WIDGET_URL, "sowmya-widget", {
@@ -63,53 +71,63 @@ function App() {
         >
           Remove User Widget
         </button>
-
-        <hr />
-
-
-         <button
-        onClick={() =>
-          loadWidget(SUNAYANA_WIDGET_URL, "sunayana-widget", {
-            name: "Sunayana",
-          })
-        }
-      >
-        Load Sunayana Widget
-      </button>
-
-      <button
-        onClick={() => removeWidget("sunayana-widget")}
-      >
-        Remove Sunayana Widget
-      </button>
-        <div id="george-widget"></div>
-        
-
         <div id='sowmya-widget'> </div>
         <hr />
+
+      </div>
+
+      <div>
+        <button
+          onClick={() =>
+            loadWidget(SUNAYANA_WIDGET_URL, "sunayana-widget", {
+              name: "Sunayana",
+            })
+          }
+        >
+          Load Sunayana Widget
+        </button>
+
+        <button
+          onClick={() => removeWidget("sunayana-widget")}
+        >
+          Remove Sunayana Widget
+        </button>
+
+
+
+
+
         <div id="sunayana-widget"></div>
-
-      <button
-        onClick={() =>
-          loadWidget(RAMYA_WIDGET_URL, "ramya-widget", {
-            name: "Ramya",
-          })
-        }
-      >
-        Load Ramya Widget
-      </button>
-
-      <button
-        onClick={() => removeWidget("ramya-widget")}
-      >
-        Remove Ramya Widget
-      </button>
+      </div>
 
       <hr />
-      <div id="ramya-widget"></div>
-      
+
+
       <div>
-        <hr />
+        <button
+          onClick={() =>
+            loadWidget(RAMYA_WIDGET_URL, "ramya-widget", {
+              name: "Ramya",
+            })
+          }
+        >
+          Load Ramya Widget
+        </button>
+
+        <button
+          onClick={() => removeWidget("ramya-widget")}
+        >
+          Remove Ramya Widget
+        </button>
+
+
+        <div id="ramya-widget"></div>
+      </div>
+
+      <hr />
+
+      <div>
+
 
         <button
           onClick={() =>
@@ -126,7 +144,27 @@ function App() {
         </button>
 
         <div id="rohith-widget"></div>
-      </div>     
+      </div>
+      <hr />
+      <div>
+        <button
+          onClick={() =>
+            loadWidget(GEETHIKA_WIDGET_URL, "geethika-widget", {
+              name: "Geethika",
+            })
+          }
+        >
+          Load User geethika'sWidget
+        </button>
+
+        <button
+          onClick={() => removeWidget("geethika-widget")}
+        >
+          Remove User Widget
+        </button>
+        <div id="geethika-widget"></div>
+      </div>
+
     </>
   );
 }
